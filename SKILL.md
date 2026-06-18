@@ -5,9 +5,39 @@ description: Netcore Infinity Design System 2.0 — use this skill whenever buil
 
 # Netcore DLS 2.0
 
-This skill enforces the Infinity Design System 2.0 for the Netcore Customer Engagement Platform. The goal is pixel-accurate UI that matches the real product — not a generic interpretation of it.
+## What This Skill Is
 
-The reference files below hold the detailed specs. This file tells you which ones to load and when.
+This skill is the design intelligence layer for the **Netcore Infinity Design System 2.0** — the official design system used across the Netcore Customer Engagement Platform (CEE) and Customer Data Platform (CDP).
+
+It packages everything an AI needs to generate UI that looks and behaves exactly like the real Netcore product: the full token library (colors, typography, spacing, elevation), component rules, UX writing standards, layout grids, and screen-level references for real Netcore flows like the campaign creation wizard.
+
+## How It Helps
+
+Without this skill, asking an AI to "build a campaign creation screen" or "design a data table" produces generic output — arbitrary colors, wrong fonts, made-up layouts. The result looks like a SaaS template, not Netcore.
+
+With this skill loaded, the AI knows:
+- **Exact tokens** — Cobalt Blue `#143F93`, Charcoal `#17173A`, Nunito Sans with the correct font variation settings, the full 15-style type scale
+- **Real screen specs** — all 10 campaign creation screens documented with exact dimensions and Figma node IDs, so the AI can query the live Figma file for pixel-accurate layout
+- **Component rules** — which shadow to use on a card vs a modal, why the L1 nav is dark navy and never chalk, why loading states use wave skeleton not pulse
+- **UX writing standards** — buttons are always UPPERCASE, status labels follow a strict vocabulary, empty states always need all four elements
+- **A trigger map** — matching common request phrases to the exact reference files and Figma nodes to load before generating anything
+
+The result is UI that a Netcore designer would recognise as correct — not an approximation, but something that could ship.
+
+## What It Covers
+
+- Campaign creation flow (10 screens, 5-step stepper)
+- Top navigation, side navigation (L1 dark + L2 chalk)
+- Text fields, forms, inputs
+- Data tables, status chips, filters
+- Modals, overlays, side drawers
+- Empty states, loading states
+- Buttons, icons, cards, toasts
+- Analytics charts (Donut, Line, Bar, Funnel, Cohort, RFM)
+- Segmentation and audience targeting patterns
+- Nudges and contextual education elements (CEE)
+
+---
 
 ---
 
