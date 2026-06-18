@@ -1,3 +1,9 @@
+---
+name: Netcore DS 2.0
+description: Infinity Design System 2.0 for the Netcore Customer Engagement Platform. Enforces exact tokens, Figma references, component rules, and UX writing standards for all UI generation.
+version: "1.0.0"
+---
+
 # Netcore DLS 2.0 — Design Skill
 
 > Infinity Design System 2.0 for the Netcore Customer Engagement Platform.
