@@ -72,48 +72,96 @@ One quirk: Figma reports letter-spacing as `0.41999…px`. The CSS export rounds
 
 ---
 
-## Trigger Map
+## How to Handle Any Design Request
 
-Match the request to a row. Load the files listed, read the image if it exists in `assets/`, and call the Figma node if one is shown. Images give visual context; Figma gives exact measurements — use both when available.
+Every request goes through this lookup sequence — images first, then text specs, then Figma. Don't skip ahead. The image is the fastest way to ground the output in the real Netcore design before reading anything else.
 
-| When the request is about… | Load | Image | Call Figma |
-|---|---|---|---|
-| Campaign creation flow / new campaign / campaign wizard | `references/campaign-flow.md` + `screens/campaign-creation.json` | `assets/campaign-setup.png` | `get_design_context('H2W6ldaO1Py7WW5c3b6YpW', '23:1001')` |
-| Campaign type selection ("how would you like to start") | `screens/campaign-creation.json` | `assets/campaign-type-selection.png` | `get_design_context('H2W6ldaO1Py7WW5c3b6YpW', '23:512')` |
-| Campaign channel / email / SMS / WhatsApp / push campaign | `screens/campaign-creation.json` | `assets/campaign-channel-selection.png` | `get_design_context('H2W6ldaO1Py7WW5c3b6YpW', '23:820')` |
-| Audience targeting / segment selection | `screens/campaign-creation.json` | `assets/campaign-audience-step1.png` | `get_design_context('H2W6ldaO1Py7WW5c3b6YpW', '31:694')` |
-| Campaign content / template gallery | `screens/campaign-creation.json` | `assets/campaign-content.png` | `get_design_context('H2W6ldaO1Py7WW5c3b6YpW', '31:3804')` |
-| Campaign schedule / send now / frequency cap | `screens/campaign-creation.json` | `assets/campaign-schedule.png` | `get_design_context('H2W6ldaO1Py7WW5c3b6YpW', '31:4435')` |
-| Campaign preview / campaign review | `screens/campaign-creation.json` | `assets/campaign-preview.png` | `get_design_context('H2W6ldaO1Py7WW5c3b6YpW', '31:4154')` |
-| Top navigation / top bar / header | `components/top-navigation.json` | `assets/top-navigation.png` | `get_design_context('GTAOKrmqHr65sLErXRivA6', '299:13696')` |
-| Side navigation / left nav / navigation menu | `components/side-navigation.json` | `assets/side-nav-l1.png` + `assets/side-nav-l2.png` | `get_design_context('GTAOKrmqHr65sLErXRivA6', '577:55775')` |
-| Text field / input / form | `components/text-fields.json` | `assets/text-field-states.png` | `get_design_context('GTAOKrmqHr65sLErXRivA6', '6183:17159')` |
-| Data table / listing page / campaign list | `references/components.md` (tables section) | `assets/data-table.png` | `get_design_context('GTAOKrmqHr65sLErXRivA6', '144:7737')` |
-| Button / CTA | `references/components.md` (buttons section) | `assets/buttons.png` | — |
-| Empty state / zero state / no data | `references/components.md` (empty states section) | `assets/empty-state.png` | — |
-| Modal / popup / confirmation dialog | `references/components.md` (modals section) | `assets/modal.png` | — |
-| Side drawer / filter panel | `references/components.md` | `assets/side-drawer.png` | — |
-| Charts / analytics / donut / line / bar | `references/components.md` | `assets/charts-donut.png` + `assets/charts-bar.png` + `assets/charts-line.png` | — |
-| Funnel / cohort / RFM | `references/components.md` | `assets/analytics-funnel.png` + `assets/analytics-cohort.png` | — |
-| Nudge / tooltip / contextual help | `references/components.md` | `assets/nudge-with-cta.png` | — |
-| 404 / error page | — | `assets/404-page.png` | — |
-| Any UI generation (catch-all) | `references/tokens.md` + `references/components.md` | — | — |
+```
+Step 1 — Scan the request for trigger keywords (table below)
+Step 2 — Display the reference image(s) for that trigger
+Step 3 — Load the text spec file(s) for that trigger  
+Step 4 — Call Figma if available and a node ID is listed
+Step 5 — Generate using image + specs + tokens as the reference
+Step 6 — Run the post-generation checklist before returning output
+```
 
-> If an image file doesn't exist yet in `assets/`, skip it and rely on the text specs + Figma call. See `assets/HOW-TO-EXPORT.md` for export instructions.
+**Step 2 is not optional.** Surface the image before building anything — output it as a markdown image so it's visible in the chat. This grounds the output in the real design and lets the user confirm you're looking at the right thing before any code is written.
+
+If an image file doesn't exist in `assets/` yet, note it and move to the text spec. Images are populated over time — see `assets/HOW-TO-EXPORT.md`.
 
 ---
 
-## Workflow for Screen-Level Requests
+## Trigger Map
 
-When someone asks for a named screen (campaign setup, audience page, etc.), the order matters:
+Scan the user's request for any of these keywords. When you find a match, follow the full sequence above.
 
-1. Find the screen's Figma node ID from `screens/campaign-creation.json`
-2. Call `get_design_context` on that node — this is your layout source of truth
-3. Load `references/tokens.md` for colors, type, spacing
-4. Use the Figma output as the exact structural reference — don't invent layout
-5. Run the post-generation checklist from `references/components.md` before returning output
+### Campaign Screens
 
-Generating a campaign screen from memory produces a generic result. The Figma call is what makes it look like the real product.
+| Keywords that trigger this | Image to display first | Then load these specs | Figma node (if available) |
+|---|---|---|---|
+| campaign creation flow, new campaign, campaign wizard, create a campaign | `assets/campaign-setup.png` | `references/campaign-flow.md` + `screens/campaign-creation.json` | `get_design_context('H2W6ldaO1Py7WW5c3b6YpW', '23:1001')` |
+| campaign type, how would you like to start, engage analyze create manage | `assets/campaign-type-selection.png` | `screens/campaign-creation.json` | `get_design_context('H2W6ldaO1Py7WW5c3b6YpW', '23:512')` |
+| campaign channel, campaign engage, email campaign, sms campaign, whatsapp campaign, push campaign, rcs | `assets/campaign-channel-selection.png` | `screens/campaign-creation.json` | `get_design_context('H2W6ldaO1Py7WW5c3b6YpW', '23:820')` |
+| campaign setup, campaign details, campaign name, ga tracking, utm | `assets/campaign-setup.png` | `references/campaign-flow.md` + `screens/campaign-creation.json` | `get_design_context('H2W6ldaO1Py7WW5c3b6YpW', '23:1001')` |
+| campaign audience, audience targeting, segment selection, who to send to | `assets/campaign-audience-step1.png` | `screens/campaign-creation.json` | `get_design_context('H2W6ldaO1Py7WW5c3b6YpW', '31:694')` |
+| campaign content, template gallery, email template picker, select template | `assets/campaign-content.png` | `screens/campaign-creation.json` | `get_design_context('H2W6ldaO1Py7WW5c3b6YpW', '31:3804')` |
+| campaign schedule, send now, send later, frequency cap, slice and send | `assets/campaign-schedule.png` | `screens/campaign-creation.json` | `get_design_context('H2W6ldaO1Py7WW5c3b6YpW', '31:4435')` |
+| campaign preview, campaign review, review before sending, campaign summary | `assets/campaign-preview.png` | `screens/campaign-creation.json` | `get_design_context('H2W6ldaO1Py7WW5c3b6YpW', '31:4154')` |
+
+### Navigation
+
+| Keywords | Image | Specs | Figma |
+|---|---|---|---|
+| top navigation, top nav, top bar, header bar | `assets/top-navigation.png` | `components/top-navigation.json` | `get_design_context('GTAOKrmqHr65sLErXRivA6', '299:13696')` |
+| side navigation, side nav, left nav, navigation menu, sidebar | `assets/side-nav-l1.png` + `assets/side-nav-l2.png` | `components/side-navigation.json` | `get_design_context('GTAOKrmqHr65sLErXRivA6', '577:55775')` |
+
+### Forms & Inputs
+
+| Keywords | Image | Specs | Figma |
+|---|---|---|---|
+| text field, input field, form field, text input, search field | `assets/text-field-states.png` | `components/text-fields.json` | `get_design_context('GTAOKrmqHr65sLErXRivA6', '6183:17159')` |
+
+### Data & Tables
+
+| Keywords | Image | Specs | Figma |
+|---|---|---|---|
+| data table, table, listing page, campaign list, results table | `assets/data-table.png` | `references/components.md` → tables section | `get_design_context('GTAOKrmqHr65sLErXRivA6', '144:7737')` |
+
+### Core Components
+
+| Keywords | Image | Specs |
+|---|---|---|
+| button, CTA, action button, primary button | `assets/buttons.png` | `references/components.md` → buttons section |
+| empty state, zero state, no data, nothing here | `assets/empty-state.png` | `references/components.md` → empty states section |
+| modal, popup, dialog, confirmation | `assets/modal.png` | `references/components.md` → modals section |
+| side drawer, filter panel, filter drawer, side panel | `assets/side-drawer.png` | `references/components.md` → side drawer section |
+| status chip, status badge, draft active scheduled | `assets/status-chips.png` | `references/components.md` → status chips section |
+| card, widget card, metric card | `assets/cards.png` | `references/components.md` → cards section |
+| toast, notification, snackbar, alert | `assets/toast-notifications.png` | `references/components.md` → toasts section |
+| accordion, expand collapse, expandable | `assets/accordion.png` | `references/components.md` |
+| progress bar, progress indicator, step progress | `assets/progress-bar.png` | `references/components.md` |
+
+### Analytics & Charts
+
+| Keywords | Image | Specs |
+|---|---|---|
+| donut chart, pie chart, donut | `assets/charts-donut.png` | `references/components.md` |
+| line chart, trend chart, line graph | `assets/charts-line.png` | `references/components.md` |
+| bar chart, bar graph, column chart | `assets/charts-bar.png` | `references/components.md` |
+| funnel, funnel analysis, conversion funnel | `assets/analytics-funnel.png` | `references/components.md` |
+| cohort, cohort analysis, retention | `assets/analytics-cohort.png` | `references/components.md` |
+
+### Other Surfaces
+
+| Keywords | Image | Specs |
+|---|---|---|
+| nudge, tooltip nudge, contextual help, spotlight | `assets/nudge-with-cta.png` | `references/components.md` → nudges section |
+| 404, error page, not found page | `assets/404-page.png` | — |
+| filters, filter bar, active filters | `assets/filters.png` | `references/components.md` |
+
+### Catch-all
+
+If no trigger keyword matches, load `references/tokens.md` + `references/components.md` and generate using the token values and component rules as the baseline.
 
 ---
 
