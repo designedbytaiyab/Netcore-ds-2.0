@@ -1,0 +1,61 @@
+{
+  "$metadata": {
+    "component": "Side Navigation — CEE",
+    "figma-node": "51:3216",
+    "version": "1.0.0",
+    "source": "Confirmed from Figma Sidenav2 design context"
+  },
+
+  "constraints": {
+    "width-expanded": "240px",
+    "width-collapsed": "60px",
+    "position": "fixed",
+    "top": "60px",
+    "height": "calc(100vh - 60px)",
+    "background": "{color.tertiary.chalk}",
+    "shadow": "{elevation.hint-of-shadow}"
+  },
+
+  "logo": {
+    "type": "image",
+    "size": "40px",
+    "position": { "left": "10px", "top": "11px" },
+    "description": "Netcore N mark only (not wordmark) — orange circular logo"
+  },
+
+  "nav-icons": {
+    "size": "20px",
+    "left-offset": "18px",
+    "items": [
+      { "id": "home",      "icon": "ia-home",     "top": "12.11%" },
+      { "id": "engage",    "icon": "ia-engage",   "top": "172px",  "description": "Campaigns / Engage" },
+      { "id": "audience",  "icon": "ia-audience", "top": "25.56%", "description": "Audience management" },
+      { "id": "template",  "icon": "ia-template", "top": "290px",  "description": "Content Manager / Templates" },
+      { "id": "analyze",   "icon": "ia-analyze",  "top": "39%",    "description": "Analytics" },
+      { "id": "settings",  "icon": "ia-settings", "top": "88.78%", "description": "Settings — bottom of nav" }
+    ]
+  },
+
+  "divider": {
+    "background": "rgba(0,0,0,0.2)",
+    "position": "93.33% from top",
+    "shadow": "{elevation.hint-of-shadow}"
+  },
+
+  "user-avatar": {
+    "position": "bottom",
+    "background": "{color.secondary.orange}",
+    "borderRadius": "3px",
+    "size": "approx 28px",
+    "textColor": "{color.monochrome.white}",
+    "font": "Nunito Bold",
+    "fontSize": "28px",
+    "description": "Shows user initials e.g. 'J' — orange background confirmed from Figma #FFA26B"
+  },
+
+  "icon-style": {
+    "default": "muted / low opacity — icons use product illustration style",
+    "active": "full opacity with highlight",
+    "colors": "Icons use ia- prefixed custom icon set, not Material icons"
+  }
+}

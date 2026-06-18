@@ -1,0 +1,140 @@
+{
+  "$metadata": {
+    "system": "Infinity DS 2.0 — Netcore CE Platform",
+    "version": "2.0.0",
+    "source": "Figma file GTAOKrmqHr65sLErXRivA6 + Zeroheight Layout Guidelines screenshots",
+    "note": "8px grid base. 4px adjustment increments. 2px micro-adjustments."
+  },
+
+  "spacing": {
+    "0":  { "$value": "0px",   "$type": "spacing" },
+    "1":  { "$value": "2px",   "$type": "spacing", "$description": "Micro — icon gap, tight badge padding" },
+    "2":  { "$value": "4px",   "$type": "spacing", "$description": "XS — between inline elements" },
+    "3":  { "$value": "8px",   "$type": "spacing", "$description": "SM — compact padding, tag internal spacing" },
+    "4":  { "$value": "12px",  "$type": "spacing" },
+    "5":  { "$value": "16px",  "$type": "spacing", "$description": "Base — standard padding, list item vertical padding" },
+    "6":  { "$value": "20px",  "$type": "spacing" },
+    "7":  { "$value": "24px",  "$type": "spacing", "$description": "LG — section padding, card internal padding" },
+    "8":  { "$value": "32px",  "$type": "spacing" },
+    "9":  { "$value": "40px",  "$type": "spacing" },
+    "10": { "$value": "48px",  "$type": "spacing", "$description": "Table row height" },
+    "11": { "$value": "64px",  "$type": "spacing" },
+    "12": { "$value": "80px",  "$type": "spacing" }
+  },
+
+  "radius": {
+    "none":   { "$value": "0px",    "$type": "borderRadius" },
+    "xs":     { "$value": "2px",    "$type": "borderRadius" },
+    "sm":     { "$value": "4px",    "$type": "borderRadius", "$description": "Buttons, badges, tags, inputs — standard radius" },
+    "md":     { "$value": "5px",    "$type": "borderRadius", "$description": "CREATE button" },
+    "lg":     { "$value": "8px",    "$type": "borderRadius", "$description": "Cards, modals, drawers, tooltips — nudge radius:8" },
+    "xl":     { "$value": "12px",   "$type": "borderRadius" },
+    "card":   { "$value": "8px",    "$type": "borderRadius", "$description": "Standard card radius" },
+    "pill":   { "$value": "9999px", "$type": "borderRadius", "$description": "Toggle pills, fully-rounded chips" }
+  },
+
+  "elevation": {
+    "tint-shadow": {
+      "$value": "0px 5px 10px 0px rgba(23, 23, 58, 0.05)",
+      "$type": "shadow",
+      "$description": "Top nav subtle lift"
+    },
+    "hint-of-shadow": {
+      "$value": "0px 5px 10px 0px rgba(0, 0, 0, 0.05)",
+      "$type": "shadow",
+      "$description": "Side nav, subtle cards"
+    },
+    "principal-shadow": {
+      "$value": "5px 5px 10px 0px #E5E9F2",
+      "$type": "shadow",
+      "$description": "Principal elevation — solid light blue-grey"
+    },
+    "light-shadow": {
+      "$value": "0px 5px 12px 0px rgba(23, 23, 58, 0.07)",
+      "$type": "shadow",
+      "$description": "Light cards, tooltips, dropdown menus"
+    },
+    "standard-shadow": {
+      "$value": "0px 5px 15px 0px rgba(23, 23, 58, 0.15)",
+      "$type": "shadow",
+      "$description": "Modals, side drawers, popovers — standard floating element"
+    },
+    "inverted-shadow": {
+      "$value": "0px -6px 14px 0px rgba(23, 23, 58, 0.05)",
+      "$type": "shadow",
+      "$description": "Bottom drawer CTAs, sticky footer bars — casts upward"
+    },
+    "azure-horizontal-highlight": {
+      "$value": "0px 1px 4px 0px rgba(10, 143, 253, 0.5)",
+      "$type": "shadow",
+      "$description": "Azure (#0A8FFD) focus highlight — horizontal axis (input focus, active tab underline)"
+    },
+    "azure-vertical-highlight": {
+      "$value": "1px 0px 4px 0px rgba(10, 143, 253, 0.5)",
+      "$type": "shadow",
+      "$description": "Azure (#0A8FFD) focus highlight — vertical axis"
+    },
+    "cobalt-horizontal-highlight": {
+      "$value": "0px 1px 4px 0px rgba(20, 63, 147, 0.5)",
+      "$type": "shadow",
+      "$description": "Cobalt (#143F93) focus highlight — horizontal axis (primary button, nav active)"
+    },
+    "cobalt-vertical-highlight": {
+      "$value": "1px 0px 4px 0px rgba(20, 63, 147, 0.5)",
+      "$type": "shadow",
+      "$description": "Cobalt (#143F93) focus highlight — vertical axis"
+    }
+  },
+
+  "layout": {
+    "top-nav-height":             { "$value": "60px",  "$type": "sizing",   "$description": "Confirmed from Figma — NOT 56px" },
+    "side-nav-l1-width":          { "$value": "60px",  "$type": "sizing",   "$description": "Left Nav Primary IA L1 — icon-only, dark navy bg" },
+    "side-nav-l2-width":          { "$value": "200px", "$type": "sizing",   "$description": "Left Nav Secondary IA L2 — expanded text labels, chalk bg" },
+    "side-nav-combined-width":    { "$value": "260px", "$type": "sizing",   "$description": "L1 + L2 total when both visible (60 + 200)" },
+    "page-max-width":             { "$value": "1440px","$type": "sizing" },
+
+    "grid-without-menu": {
+      "$description": "Full-width layout — no side nav visible",
+      "left-padding":   { "$value": "30px",  "$type": "spacing" },
+      "gutter":         { "$value": "30px",  "$type": "spacing" },
+      "right-padding":  { "$value": "45px",  "$type": "spacing" }
+    },
+
+    "grid-l1-menu": {
+      "$description": "L1 side nav visible (icon-only, 60px)",
+      "sidenav-width":  { "$value": "60px",  "$type": "sizing" },
+      "gap":            { "$value": "30px",  "$type": "spacing" },
+      "right-padding":  { "$value": "45px",  "$type": "spacing" },
+      "inner-gutter":   { "$value": "80px",  "$type": "spacing" }
+    },
+
+    "grid-l2-menu": {
+      "$description": "L1 + L2 side nav visible (expanded, 200px secondary)",
+      "sidenav-expanded": { "$value": "200px", "$type": "sizing" },
+      "gap":              { "$value": "30px",  "$type": "spacing" },
+      "right-padding":    { "$value": "45px",  "$type": "spacing" },
+      "content-gutter":   { "$value": "67px",  "$type": "spacing" }
+    }
+  },
+
+  "icon-size": {
+    "xs":        { "$value": "12px", "$type": "sizing", "$description": "Tiny inline icons" },
+    "sm":        { "$value": "16px", "$type": "sizing", "$description": "Inline with text" },
+    "md":        { "$value": "20px", "$type": "sizing", "$description": "Nav icons, standalone actions" },
+    "lg":        { "$value": "24px", "$type": "sizing", "$description": "Empty state, hero icons" },
+    "xl":        { "$value": "32px", "$type": "sizing" },
+    "avatar":    { "$value": "30px", "$type": "sizing", "$description": "Top nav user avatar container" },
+    "logo-nav":  { "$value": "40px", "$type": "sizing", "$description": "Netcore logo in side nav" }
+  },
+
+  "component-height": {
+    "button-sm":      { "$value": "28px", "$type": "sizing" },
+    "button-default": { "$value": "32px", "$type": "sizing" },
+    "button-lg":      { "$value": "40px", "$type": "sizing" },
+    "input-default":  { "$value": "36px", "$type": "sizing" },
+    "table-row":      { "$value": "48px", "$type": "sizing" },
+    "nav-item":       { "$value": "40px", "$type": "sizing" },
+    "tag":            { "$value": "24px", "$type": "sizing" },
+    "toast":          { "$value": "48px", "$type": "sizing", "$description": "Min height — expands with content" }
+  }
+}

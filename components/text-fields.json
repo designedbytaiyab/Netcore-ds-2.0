@@ -1,0 +1,144 @@
+{
+  "$metadata": {
+    "component": "Text Fields",
+    "figma-file": "GTAOKrmqHr65sLErXRivA6",
+    "figma-node": "see Atoms page — _atom/{core} Text Field: 1643:53916",
+    "zeroheight": "Components → Text Fields",
+    "source": "Confirmed from Figma get_design_context on node 6183:17159",
+    "sizes": "L: 620px | M: 300px | S: 140px — do not enable both help-text and char-count together"
+  },
+
+  "anatomy": {
+    "label": {
+      "typography": "emphasis (Nunito Sans SemiBold 14px/20px, 0.42px)",
+      "color": "#17173A (Text/Charcoal)",
+      "required-marker": "* appended to label text"
+    },
+    "input-container": {
+      "height": "auto — expands with content (min ~42px due to py-[11px] × 2 + 20px line-height)",
+      "padding": "px: 15px, py: 11px",
+      "border-radius": "4px",
+      "border-default": "1px solid #DDE2EE (almost-grey)",
+      "border-focus": "1px solid #143F93 (cobalt blue)",
+      "focus-ring": "box-shadow: 0px 0px 0px 4px #DBE7FF (light cobalt at low opacity)",
+      "background": "#FFFFFF"
+    },
+    "input-text": {
+      "typography": "body-regular (Nunito Sans Regular 14px/20px, 0.42px)",
+      "color": "#17173A",
+      "fontVariationSettings": "\"YTLC\" 500, \"wdth\" 100"
+    },
+    "placeholder": {
+      "color": "#6F6F8D (Text/Grey)"
+    },
+    "helper-text": {
+      "typography": "caption-c1 (12px/16px, Regular)",
+      "color": "#6F6F8D",
+      "note": "Do not show simultaneously with character count"
+    },
+    "error-message": {
+      "typography": "caption-c1 (12px/16px, Regular)",
+      "color": "#F05C5C (secondary-red)",
+      "icon": "16px error icon prepended"
+    },
+    "character-count": {
+      "typography": "caption-c1 (12px/16px, Regular)",
+      "color": "#6F6F8D",
+      "position": "right-aligned below input",
+      "note": "Do not show simultaneously with help-text"
+    }
+  },
+
+  "states": {
+    "default": {
+      "border": "1px solid #DDE2EE",
+      "background": "#FFFFFF",
+      "shadow": "none"
+    },
+    "focus": {
+      "border": "1px solid #143F93",
+      "shadow": "0px 0px 0px 4px #DBE7FF",
+      "background": "#FFFFFF"
+    },
+    "filled": {
+      "border": "1px solid #DDE2EE",
+      "text-color": "#17173A"
+    },
+    "error": {
+      "border": "1px solid #F05C5C",
+      "helper-color": "#F05C5C"
+    },
+    "disabled": {
+      "background": "#F6F6F6 (chalk)",
+      "border": "1px solid #DDE2EE",
+      "text-color": "#DDE2EE",
+      "cursor": "not-allowed"
+    }
+  },
+
+  "variants": {
+    "input-default": {
+      "description": "Single line text input",
+      "height": "42px (py-11 × 2 + 20px line-height)"
+    },
+    "input-with-icon": {
+      "description": "Left or right 16px icon inside the input",
+      "icon-size": "16px",
+      "icon-color": "#6F6F8D"
+    },
+    "search": {
+      "description": "Search icon left, clear × right when filled",
+      "icon-size": "16px"
+    },
+    "password": {
+      "description": "Toggle eye icon (show/hide) on right",
+      "icon-node": "atom/icon — view-password"
+    },
+    "textarea": {
+      "description": "Multi-line input — same padding and styling, min-height 80px",
+      "resize": "vertical only"
+    }
+  },
+
+  "category-labels-field": {
+    "description": "Organism that combines a text field with a tag/label color selector",
+    "figma-node": "6183:17159 (Type=Default) / 6183:19113 (Type=Dropdown)",
+    "types": {
+      "default": "Inline color swatches below field + Create New link",
+      "dropdown": "Opens a dropdown panel with color swatches + Similar category suggestions"
+    },
+    "color-swatch": {
+      "size": "14px × 14px",
+      "border-radius": "50px (fully round)",
+      "selected-state": "tick icon overlaid at inset 14.29%"
+    },
+    "create-new-link": {
+      "typography": "emphasis (SemiBold 14px)",
+      "color": "#0A8FFD (secondary-azure)",
+      "position": "right-aligned"
+    },
+    "similar-category-tag": {
+      "height": "32px",
+      "border-radius": "26px",
+      "padding": "px-16px py-6px",
+      "gap": "16px (between label and + icon)",
+      "icon": "18px add icon",
+      "typography": "emphasis (SemiBold 14px/20px, 0.42px)"
+    },
+    "color-palette": [
+      "#C4E6F7 (light blue)",
+      "#DFC5F0 (light purple)",
+      "#AFF0DF (light teal)",
+      "#FBEAB3 (light yellow)",
+      "#F7CCB2 (light orange)",
+      "#F5D0DC (light pink)",
+      "#D5C3FB (light violet)",
+      "#EFFEBA (light lime)",
+      "#E5ECCD (sage)",
+      "#D8DBFC (periwinkle)",
+      "#C9FDEB (mint)",
+      "#F9DCC3 (peach)",
+      "#E7E5E5 (light grey)"
+    ]
+  }
+}

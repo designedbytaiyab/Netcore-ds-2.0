@@ -1,0 +1,110 @@
+{
+  "$schema": "https://design-tokens.org/schema.json",
+  "$metadata": {
+    "system": "Infinity DS 2.0 — Netcore CE Platform",
+    "version": "2.0.0",
+    "source": "Authoritative: /Users/taiyabafsar/Downloads/design_system_styles.css (Zeroheight CSS export)",
+    "figma-file": "GTAOKrmqHr65sLErXRivA6",
+    "note": "All hex values confirmed directly from design_system_styles.css. Never hardcode — always reference a token."
+  },
+
+  "color": {
+
+    "primary": {
+      "cobalt-blue":   { "$value": "#143F93", "$type": "color", "$css-var": "--primary-cobalt-blue",    "$description": "Brand blue — nav labels, active states, focus rings, CTAs, CEE label text" },
+      "core-orange":   { "$value": "#FC5E02", "$type": "color",                                          "$description": "Primary action color — CREATE button, Netcore logo mark" },
+      "gradient-peach":{ "$value": "#FF839F", "$type": "color", "$css-var": "--primary-gradient-peach", "$description": "Gradient endpoint — peach red" },
+      "ash":           { "$value": "#291E30", "$type": "color",                                          "$description": "Deep dark background" }
+    },
+
+    "secondary": {
+      "azure":  { "$value": "#0A8FFD", "$type": "color", "$css-var": "--secondary-azure",  "$description": "Azure blue — highlight shadows, interactive accents" },
+      "green":  { "$value": "#00C48C", "$type": "color", "$css-var": "--secondary-green",  "$description": "Success / Live status / Adoption score" },
+      "orange": { "$value": "#FFA26B", "$type": "color", "$css-var": "--secondary-orange", "$description": "Peach orange — avatar backgrounds, warm accents" },
+      "purple": { "$value": "#6979F8", "$type": "color", "$css-var": "--secondary-purple", "$description": "Purple — accent, Journey node colors" },
+      "red":    { "$value": "#F05C5C", "$type": "color", "$css-var": "--secondary-red",    "$description": "Error / destructive state red" },
+      "violet": { "$value": "#BE52F2", "$type": "color", "$css-var": "--secondary-violet", "$description": "Violet — accent" },
+      "yellow": { "$value": "#FFCF5C", "$type": "color", "$css-var": "--secondary-yellow", "$description": "Warning state yellow" }
+    },
+
+    "tertiary": {
+      "almost-grey":    { "$value": "#DDE2EE", "$type": "color", "$css-var": "--tertiary-almost-grey",    "$description": "Borders, dividers, disabled text, secondary button border" },
+      "chalk":          { "$value": "#F6F6F6", "$type": "color", "$css-var": "--tertiary-chalk",          "$description": "Side nav L2 background, table headers, subtle surfaces" },
+      "grey":           { "$value": "#6F6F8D", "$type": "color", "$css-var": "--tertiary-grey",           "$description": "Secondary text, placeholders, inactive tab labels" },
+      "light-blue-bg":  { "$value": "#F4F8FF", "$type": "color", "$css-var": "--tertiary-light-blue-bg",  "$description": "CEE label badge bg, tinted info panels, page backgrounds" }
+    },
+
+    "text": {
+      "charcoal":    { "$value": "#17173A", "$type": "color", "$css-var": "--text-charcoal",    "$description": "Primary text — dark navy. NOT pure black. Use on all light backgrounds." },
+      "grey":        { "$value": "{color.tertiary.grey}",        "$type": "color", "$css-var": "--text-grey",        "$description": "Secondary text, body copy in nudges" },
+      "almost-grey": { "$value": "{color.tertiary.almost-grey}", "$type": "color", "$css-var": "--text-almost-grey", "$description": "Disabled text" },
+      "inverse":     { "$value": "{color.monochrome.white}",     "$type": "color",                                   "$description": "Text on dark/cobalt backgrounds" },
+      "link":        { "$value": "{color.primary.cobalt-blue}",  "$type": "color",                                   "$description": "Hyperlinks, anchor text" },
+      "success":     { "$value": "{color.secondary.green}",      "$type": "color",                                   "$description": "Success / positive metric text" },
+      "error":       { "$value": "{color.secondary.red}",        "$type": "color",                                   "$description": "Error messages, validation text" }
+    },
+
+    "surface": {
+      "primary":   { "$value": "{color.monochrome.white}",     "$type": "color", "$description": "Default page/card background" },
+      "secondary": { "$value": "{color.tertiary.chalk}",       "$type": "color", "$description": "Side nav L2, table headers, subtle panels" },
+      "tinted":    { "$value": "{color.tertiary.light-blue-bg}","$type": "color", "$description": "Badge backgrounds, CEE label, info panels" },
+      "inverse":   { "$value": "{color.primary.cobalt-blue}",  "$type": "color", "$description": "Dark CTAs, filled nav active items" },
+      "dark-nav":  { "$value": "#17173A",                      "$type": "color", "$description": "Left Navigation Primary (IA L1) — dark navy background" }
+    },
+
+    "border": {
+      "default": { "$value": "{color.tertiary.almost-grey}",  "$type": "color", "$description": "Dividers, card outlines, default input border" },
+      "strong":  { "$value": "{color.tertiary.grey}",         "$type": "color", "$description": "Stronger dividers, hover borders" },
+      "focus":   { "$value": "{color.primary.cobalt-blue}",   "$type": "color", "$description": "Focus ring — inputs, interactive elements" },
+      "error":   { "$value": "{color.secondary.red}",         "$type": "color", "$description": "Error state input borders" }
+    },
+
+    "semantic": {
+      "success":        { "$value": "{color.secondary.green}",   "$type": "color" },
+      "success-subtle": { "$value": "#E6F9F4",                   "$type": "color" },
+      "error":          { "$value": "{color.secondary.red}",     "$type": "color", "$css-var": "--error-state-red" },
+      "error-subtle":   { "$value": "#FDEAEA",                   "$type": "color" },
+      "warning":        { "$value": "{color.secondary.yellow}",  "$type": "color", "$css-var": "--warning-state-yellow" },
+      "warning-subtle": { "$value": "#FFF9E0",                   "$type": "color" },
+      "info":           { "$value": "{color.primary.cobalt-blue}","$type": "color" },
+      "info-subtle":    { "$value": "{color.tertiary.light-blue-bg}","$type": "color" }
+    },
+
+    "shadow": {
+      "tint":      { "$value": "rgba(23, 23, 58, 0.07)", "$type": "color", "$description": "Base shadow color — navy tint at low opacity" },
+      "principal": { "$value": "#E5E9F2",                 "$type": "color", "$description": "Solid light blue-grey — principal elevation" }
+    },
+
+    "monochrome": {
+      "black": { "$value": "#000000", "$type": "color", "$css-var": "--monochrome-black" },
+      "white": { "$value": "#FFFFFF", "$type": "color", "$css-var": "--monochrome-white" }
+    },
+
+    "gradient": {
+      "blue":            { "$value": "#A2B1FC", "$type": "color", "$css-var": "--gradients-primary-blue" },
+      "golden":          { "$value": "#FBD233", "$type": "color", "$css-var": "--gradients-primary-golden" },
+      "green":           { "$value": "#00E4C0", "$type": "color", "$css-var": "--gradients-primary-green" },
+      "orange":          { "$value": "#FFCFA4", "$type": "color", "$css-var": "--gradients-primary-orange" },
+      "peach-red":       { "$value": "#FF839F", "$type": "color", "$css-var": "--gradients-primary-peach-red" },
+      "purple":          { "$value": "#E08AFA", "$type": "color", "$css-var": "--gradients-primary-purple" },
+      "cobalt-blue":     { "$value": "#97BAFF", "$type": "color", "$css-var": "--gradients-primary-cobalt-blue" },
+      "fluorescent-blue":{ "$value": "#03AFB9", "$type": "color", "$css-var": "--gradients-primary-fluorescent-blue" },
+      "pinkish-red":     { "$value": "#FCA2A2", "$type": "color", "$css-var": "--gradients-primary-pinkish-red" },
+      "sky-blue":        { "$value": "#18C2FF", "$type": "color", "$css-var": "--gradients-primary-sky-blue" },
+      "sun-orange":      { "$value": "#E76D11", "$type": "color", "$css-var": "--gradients-primary-sun-orange" },
+      "yellow":          { "$value": "#FFE995", "$type": "color", "$css-var": "--gradients-primary-yellow" }
+    },
+
+    "channel": {
+      "email":    { "$value": "{color.primary.cobalt-blue}", "$type": "color" },
+      "sms":      { "$value": "{color.secondary.green}",     "$type": "color" },
+      "push":     { "$value": "{color.primary.core-orange}", "$type": "color" },
+      "whatsapp": { "$value": "#25D366",                     "$type": "color" },
+      "in-app":   { "$value": "#8016F2",                     "$type": "color" },
+      "rcs":      { "$value": "#6E70F3",                     "$type": "color" },
+      "facebook": { "$value": "#1877F2",                     "$type": "color" },
+      "web-push": { "$value": "{color.secondary.yellow}",    "$type": "color" },
+      "app-push": { "$value": "{color.primary.core-orange}", "$type": "color" }
+    }
+  }
+}

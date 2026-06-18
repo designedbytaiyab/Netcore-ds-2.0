@@ -1,0 +1,450 @@
+{
+  "$metadata": {
+    "system": "Infinity DS 2.0 — Netcore CE Platform",
+    "version": "2.0.0",
+    "figma-file": "GTAOKrmqHr65sLErXRivA6",
+    "source": "Figma pages (Atoms/Molecules/Organisms) + Netcore Zeroheight full absorption",
+    "zeroheight": "netcore.zeroheight.com/759faf070",
+    "figma-pages": {
+      "48:2941":  "Cover",
+      "5:72":     "Icons",
+      "33:2896":  "Atoms",
+      "60:2987":  "Molecules",
+      "144:7737": "Organisms"
+    }
+  },
+
+  "atoms": {
+    "description": "Smallest building blocks — single-purpose, no children",
+    "components": {
+      "buttons": {
+        "figma-node": "61:3014",
+        "zeroheight": "Components → Buttons",
+        "status": "documented",
+        "spec-file": "components/buttons.json",
+        "variants": ["Primary", "Secondary", "Tertiary/Ghost", "Quaternary", "Icon Button", "Icon + Label"],
+        "states": ["Default", "Hover", "Active", "Disabled", "Loading"],
+        "sizes": { "small": "28px", "default": "32px", "large": "40px" },
+        "rules": [
+          "Button text ALWAYS UPPERCASE — non-negotiable",
+          "Primary: cobalt blue fill (#143F93), white text, 4px radius",
+          "Secondary: white fill, almost-grey border (#DDE2EE)",
+          "Tertiary/Ghost: no fill, cobalt text",
+          "Only one primary button per screen/section",
+          "Destructive actions use error red fill"
+        ]
+      },
+      "checkboxes": {
+        "figma-node": "338:20284",
+        "zeroheight": "Components → Buttons (Design tab)",
+        "states": ["Unchecked", "Checked (cobalt fill #143F93)", "Indeterminate", "Disabled"],
+        "size": "16px"
+      },
+      "radio-buttons": {
+        "figma-node": "335:25474",
+        "zeroheight": "Components → Buttons (Design tab)",
+        "states": ["Unselected", "Selected (cobalt fill)", "Disabled"]
+      },
+      "switches": {
+        "figma-node": "339:20444",
+        "zeroheight": "Components → Buttons (Design tab)",
+        "states": ["Off (grey track)", "On (cobalt blue fill)", "Disabled"],
+        "sizes": ["Default", "Small"]
+      },
+      "tags": {
+        "figma-node": "60:2988",
+        "zeroheight": "Components → Tags",
+        "variants": ["Default", "Status (colored)", "Removable (× close icon)", "Outlined"],
+        "height": "24px",
+        "radius": "4px"
+      },
+      "avatar": {
+        "figma-node": "33:2897",
+        "variants": ["Initials", "Image", "Avatar Group"],
+        "size": "30px (top nav)"
+      },
+      "avatar-group": { "figma-node": "44:3409", "status": "ready" },
+      "status-badge": {
+        "figma-node": "70:2993",
+        "typography": "status (10px/700)",
+        "values": ["DRAFT", "ACTIVE", "SCHEDULED", "PAUSED", "COMPLETED", "FAILED", "ARCHIVED"]
+      },
+      "spinner": {
+        "figma-node": "84:3060",
+        "color": "cobalt blue (#143F93)",
+        "use": "Short actions < 3s with no predictable end time. NOT for tables — use skeleton."
+      },
+      "skeleton-loader": {
+        "figma-node": "49:2911",
+        "animation": "WAVE — not pulse. Netcore-specific rule.",
+        "use": "Data tables, card content, list items while data loads",
+        "color": "almost-grey (#DDE2EE) base, lighter wave"
+      },
+      "overlay": { "figma-node": "51:4042", "opacity": "0.5", "fill": "#17173A" },
+      "content-divider": { "figma-node": "82:3050", "color": "#DDE2EE (almost-grey)" },
+      "breadcrumbs": { "figma-node": "86:3065" },
+      "raman-ai": { "figma-node": "103:3206", "description": "AI assistant avatar — Netcore Raman" },
+      "elevation": {
+        "figma-node": "41:3227",
+        "variants": {
+          "principal-shadow":            "5px 5px 10px 0px #E5E9F2",
+          "tint-shadow":                 "0px 5px 10px 0px rgba(23,23,58,0.05)",
+          "hint-of-shadow":              "0px 5px 10px 0px rgba(0,0,0,0.05)",
+          "light-shadow":                "0px 5px 12px 0px rgba(23,23,58,0.07)",
+          "standard-shadow":             "0px 5px 15px 0px rgba(23,23,58,0.15)",
+          "inverted-shadow":             "0px -6px 14px 0px rgba(23,23,58,0.05)",
+          "azure-horizontal-highlight":  "0px 1px 4px 0px rgba(10,143,253,0.5)",
+          "azure-vertical-highlight":    "1px 0px 4px 0px rgba(10,143,253,0.5)",
+          "cobalt-horizontal-highlight": "0px 1px 4px 0px rgba(20,63,147,0.5)",
+          "cobalt-vertical-highlight":   "1px 0px 4px 0px rgba(20,63,147,0.5)"
+        }
+      }
+    }
+  },
+
+  "molecules": {
+    "description": "Combinations of atoms forming reusable UI patterns",
+    "components": {
+      "text-fields": {
+        "figma-node": "see atoms page",
+        "zeroheight": "Components → Text Fields",
+        "variants": ["Input Default", "Input with Icon", "Search Field", "Password", "Textarea"],
+        "states": ["Default", "Focus (cobalt border + azure shadow)", "Filled", "Error (red border)", "Disabled"],
+        "height": "36px",
+        "radius": "4px"
+      },
+      "dropdowns": {
+        "figma-node": "189:7183",
+        "zeroheight": "Components → Dropdowns",
+        "variants": ["Single Select", "Multi-select", "Search Dropdown", "Grouped Options", "Selection List"],
+        "states": ["Default", "Open", "Selected", "Disabled"],
+        "trigger-height": "36px"
+      },
+      "slider-selector": {
+        "zeroheight": "Components → Slider Selectors",
+        "variants": ["Single thumb", "Range (dual thumb)"],
+        "track": "almost-grey (#DDE2EE)",
+        "fill": "cobalt blue (#143F93)"
+      },
+      "accordion": {
+        "figma-node": "359:31278",
+        "zeroheight": "Components → Accordion",
+        "types": {
+          "chevron": "▼ arrow on header. Expand/collapse body. Example: CTA UTM Parameters.",
+          "toggle": "Toggle switch on header. Content reveals on enable. Example: Delivery time zone."
+        },
+        "levels": ["Level 1 (single)", "Level 2 Collapsed", "Level 2 Expanded"],
+        "rule": "Never put critical information inside accordion — users may not expand"
+      },
+      "progress-bar": {
+        "figma-node": "221:14993",
+        "zeroheight": "Components → Progress Bar",
+        "fill": "cobalt blue (#143F93)",
+        "track": "almost-grey (#DDE2EE)",
+        "label": "count / total + description above bar. Example: '22 / 46 Fields mapped'"
+      },
+      "progress-indicator": {
+        "figma-node": "289:12325",
+        "zeroheight": "Components → Progress Indicator",
+        "type": "Horizontal / Vertical stepper",
+        "states": ["Completed (✓ checkmark)", "Active (cobalt filled)", "Upcoming (grey outline)"],
+        "variants": ["Horizontal", "Active state", "Disabled state", "Success state"]
+      },
+      "pagination": {
+        "figma-node": "175:7227",
+        "zeroheight": "Components → Miscellaneous → Pagination",
+        "structure": "« ‹ [page numbers] › »",
+        "active": "cobalt blue underline + bold"
+      },
+      "carousel": {
+        "figma-node": "221:11028",
+        "zeroheight": "Components → Miscellaneous → Carousel",
+        "max-items": 7,
+        "indicator": "dot row — active = dark filled pill",
+        "rule": "Do NOT use for important/critical information"
+      },
+      "toasts-flags": {
+        "figma-node": "148:6703",
+        "zeroheight": "Components → Toasts & Flags",
+        "toast-types": ["Success (green)", "Error (red)", "Warning (yellow)", "Info (cobalt blue)"],
+        "flag-types": ["Information", "Warning", "Success", "Error"],
+        "duration": "4–5s success/info; persistent errors",
+        "variants": ["Actionable", "Non-actionable"]
+      },
+      "drop-zone": {
+        "figma-node": "166:6735",
+        "zeroheight": "Components → Drop Zone",
+        "states": ["Default (dashed border)", "Drag Over (cobalt border + light-blue-bg)", "Uploaded"],
+        "variants": ["Profile logo", "HTML", "With sample download", "Without sample download"]
+      },
+      "tooltips": {
+        "figma-node": "172:11871",
+        "zeroheight": "Components → Tooltips",
+        "placements": ["Top", "Bottom", "Left", "Right"],
+        "max-width": "200px",
+        "bg": "#17173A (dark)",
+        "text": "#FFFFFF"
+      },
+      "cards": {
+        "figma-node": "177:7119",
+        "zeroheight": "Components → Cards",
+        "variants": ["Stat card", "Content card", "Channel card", "Selection card"],
+        "radius": "8px",
+        "shadow": "elevation.light-shadow"
+      },
+      "search": { "figma-node": "190:8732" },
+      "popup": {
+        "figma-node": "214:9336",
+        "zeroheight": "Components → PopUps",
+        "note": "Modal = Overlay + PopUp combined",
+        "sizes": ["Small (400px)", "Medium (560px)", "Large (720px)"],
+        "footer": "Right-aligned Primary + Secondary buttons"
+      },
+      "toggle-button": { "figma-node": "1702:62580" },
+      "info-note": { "figma-node": "8859:5317" },
+      "cards-listing-header": { "figma-node": "6183:59226" }
+    }
+  },
+
+  "organisms": {
+    "description": "Complex, product-specific UI patterns",
+    "components": {
+      "top-navigation": {
+        "figma-node": "299:13696",
+        "zeroheight": "Components → Top Bar — Headers",
+        "spec-file": "components/top-navigation.json",
+        "status": "fully-documented",
+        "height": "60px",
+        "background": "#FFFFFF",
+        "shadow": "elevation.tint-shadow",
+        "left-section": ["Netcore logo wordmark (110×22px)", "Product name"],
+        "right-section": ["CREATE button", "Search (20px icon)", "Notifications", "Help", "User avatar (30px)"],
+        "create-button": "cobalt fill, white UPPERCASE text, 5px radius, py:8px px:12px",
+        "variants": ["Home CEE Header", "Wide CEE Header", "CDP Header", "CEE Segments Header", "Dashboard Top Bar"]
+      },
+      "side-navigation": {
+        "figma-node": "577:55775",
+        "zeroheight": "Components → Left Navigation",
+        "spec-file": "components/side-navigation.json",
+        "status": "documented",
+        "l1": {
+          "name": "Left Navigation Primary (IA L1)",
+          "width": "60px",
+          "background": "#17173A (DARK NAVY — not chalk)",
+          "icons": "20px, white/ghost on dark bg",
+          "active": "cobalt blue filled icon + active indicator",
+          "items": ["Netcore logo (top)", "Navigation icons", "User avatar (bottom)"]
+        },
+        "l2": {
+          "name": "Left Navigation Secondary (IA L2)",
+          "width": "200px",
+          "background": "#F6F6F6 (chalk)",
+          "items": "40px height, outline icon + text label",
+          "active": "3px cobalt left border + light-blue-bg (#F4F8FF) fill"
+        }
+      },
+      "tabs-menu": {
+        "figma-node": "329:13756",
+        "zeroheight": "Components → Tabs & Menu",
+        "tab-types": {
+          "navigation-tab": "Stat card style — label + value (1.23M) + orange sparkline + % change. Active = cobalt underline.",
+          "tab-variant": "Simple text tab. Selected = cobalt underline + blue text. Unselected = grey text.",
+          "time-period-toggle": "2 or 3 options (Day/Week/Month). Selected = dark filled pill.",
+          "toggle-variants": ["Chart Toggle", "Icon Toggle", "Three-Button Toggle"],
+          "navigation-menu": "Horizontal text tabs (Overview, All Customers, 360° view, Business Metrics, etc.). Active = cobalt underline.",
+          "dashboard-filter-menu": "Horizontal filter bar: [Date ▼] [Contacts ▼] [Platform ▼] [Conversion Activity ▼] [More Filters >]. Applied state shows specific values + '🔵 More Filters Applied >'"
+        }
+      },
+      "navigation-menu": { "figma-node": "492:45812" },
+      "dashboard-filter": { "figma-node": "1253:52674" },
+      "modals": {
+        "figma-node": "329:13753",
+        "zeroheight": "Components → Modals",
+        "note": "Modal = Overlay (full-page dim at 0.5 opacity) + PopUp (content card). Always used together.",
+        "overlay-bg": "#17173A at opacity 0.5",
+        "popup-radius": "8px",
+        "shadow": "elevation.standard-shadow"
+      },
+      "overlays": {
+        "zeroheight": "Components → Overlays",
+        "types": ["Full Page Overlay (dims viewport)", "Side Drawer Overlay"],
+        "bg": "#17173A",
+        "opacity": "0.5"
+      },
+      "side-drawers": {
+        "figma-node": "177:7122",
+        "zeroheight": "Components → Side Drawers + Filters & Side Drawers",
+        "placement": "Right edge, slides in over content",
+        "shadow": "elevation.standard-shadow (left edge)",
+        "sticky-footer-shadow": "elevation.inverted-shadow (above CTA bar)",
+        "variants": [
+          "Journey Goal and Control Group",
+          "Basic Filter",
+          "Card Selection",
+          "Checkbox Selections",
+          "Code View",
+          "Radio and Switch Selections",
+          "Section Grouping"
+        ]
+      },
+      "calendar": {
+        "figma-node": "279:11922",
+        "zeroheight": "Components → Calendar",
+        "variants": ["Single date", "Date range"],
+        "selected-cell": "cobalt blue fill",
+        "range-fill": "light-blue-bg (#F4F8FF)",
+        "sub-variants": [
+          "Calendar Range — with time selector, left pane",
+          "Calendar Range — without time selector",
+          "Calendar Single — with time selector + dropdown",
+          "Calendar Single — plain"
+        ]
+      },
+      "progress-indicator-organism": {
+        "figma-node": "289:12325",
+        "variants-detailed": [
+          { "name": "Horizontal", "figma-node": "299:13201" },
+          { "state": "Active",    "figma-node": "299:12742" },
+          { "state": "Disabled",  "figma-node": "299:12742" },
+          { "state": "Success",   "figma-node": "299:12742" }
+        ]
+      },
+      "accordion-organism": { "figma-node": "359:31278" },
+      "segmentation": {
+        "figma-node": "504:53340",
+        "zeroheight": "Components → Segmentation",
+        "icon-exception": "FILLED icons used here — exception to outline-only rule",
+        "cee-filter": {
+          "structure": "Include users / Exclude users blocks",
+          "condition-row": "who | did | [event] | Total | ≥ | [count] | [channel] | Specific | [name] | [last N days] | + FILTER | 🗑️",
+          "cta": "+ ADD CONDITIONS"
+        },
+        "cdp-filter": {
+          "structure": "where [attribute] is [value] rows",
+          "connectors": "AND ▼ between conditions, AND ▼ between groups",
+          "cta": "+ ADD / + ADD CONDITIONS"
+        },
+        "empty-states": ["CDP empty (+ ADD button)", "CEE empty (+ ADD button)"]
+      },
+      "journey-builder": {
+        "figma-node": "1111:52281",
+        "zeroheight": "Components → Journey",
+        "node-types": ["Actions (×2)", "Conditions (×2)", "Flow Controls (×2)", "Triggers (×2)"],
+        "node-selector-panel": {
+          "structure": "Accordion with sections",
+          "sections": ["Triggers", "Actions", "Conditions", "Flow Controls"],
+          "action-channels": ["Email", "SMS", "WebPush", "App Push", "None", "Web-assist", "WhatsApp", "Remove from journey"]
+        },
+        "viewfinder": "Mini canvas map (2 variants: with nodes / empty)",
+        "node-colors": "Purple/pink = Actions, Green = Success, Blue = Conditions"
+      },
+      "segment-contacts-selection": { "figma-node": "2300:69778" },
+      "category-labels": { "figma-node": "6183:16994" },
+      "text-formatter": { "figma-node": "6382:22903" },
+      "email-api-left-nav": { "figma-node": "862:59906" },
+      "charts-analysis": {
+        "zeroheight": "Components → Charts & Analysis",
+        "chart-types": {
+          "donut":    { "figma-node": "334:15055", "description": "Arcs not slices. Center can show additional data. ⋮ menu + VIEW MORE →" },
+          "line":     { "figma-node": "356:21656", "description": "X/Y continuous line. COMPARE TO ▼ + Day/Week/Month toggle." },
+          "bar":      { "figma-node": "356:22401", "description": "Categorical vertical bars. Cobalt blue fill. COMPARE TO ▼ toggle." },
+          "map-geo":  { "figma-node": "356:22998", "description": "World map with colored regions + horizontal bar comparison panel." }
+        },
+        "analysis-types": {
+          "funnel":     { "figma-node": "356:23086", "description": "Steps list + bar chart. Overall Conversion %, Average Time, activity table." },
+          "cohort":     { "figma-node": "358:23484", "description": "First Activity × Week 0-N grid. % retention. Dark = high retention." },
+          "rfm":        { "figma-node": "359:24813", "description": "Colored segment grid: Stars, Lead, At Risk, Wind Attention, Mobile Sailor, Premium, Dormant, Inactive." },
+          "user-flow":  { "figma-node": "359:28685", "description": "Sankey diagram. Start→Step 1→Step 2→End. Flow width = volume. Red = dropoff." }
+        }
+      },
+      "dashboard-widgets": {
+        "zeroheight": "Components → Miscellaneous → Dashboard Widgets",
+        "description": "Mini-reports in multiples on dashboards",
+        "sizes": {
+          "small":  "3 headline stats + horizontal bar chart + 'Go to →'",
+          "medium": "tabbed stats + multi-line chart + 'Go to →'",
+          "large":  "segmented tabs + 3 headline stats + vertical bar chart"
+        }
+      }
+    }
+  },
+
+  "templates": {
+    "data-tables": {
+      "zeroheight": "Templates → Data Tables",
+      "types": {
+        "scrollable": "Horizontal scroll, 1st column sticky",
+        "sticky": "No horizontal scroll"
+      },
+      "variants": ["Default Table", "Horizontal Scrolling Table", "Single Action", "Campaign Listing"],
+      "row-height": "48px",
+      "checkbox-col": "40px",
+      "header-typography": "header-h4 or small-b",
+      "status-chips": {
+        "DRAFT": "grey outline",
+        "ACTIVE": "green fill (#00C48C)",
+        "SCHEDULED": "cobalt blue",
+        "PAUSED": "yellow (#FFCF5C)",
+        "ENDED": "dark neutral",
+        "FAILED": "red (#F05C5C)"
+      }
+    },
+    "empty-states": {
+      "zeroheight": "Templates → Empty States",
+      "required": ["Brand illustration", "Headline (H3, Title Case)", "Body copy (1–2 sentences)", "CTA button (UPPERCASE)"],
+      "illustration-categories": [
+        "CDP-CEE switch", "Edu-tech", "Email verification", "Media & OTT",
+        "No data found", "User Data Table"
+      ]
+    }
+  },
+
+  "pages": {
+    "404": {
+      "zeroheight": "Pages → 404 Page",
+      "illustration": "Hot air balloon + floating astronauts with Netcore ∞ logo, pastel blue sky",
+      "text": "Error 404 / Sorry, the page you are looking for is not found"
+    }
+  },
+
+  "icons": {
+    "figma-node": "5:72",
+    "default-style": "OUTLINE — filled is EXCEPTION (Segmentation only)",
+    "sizes": ["12px", "16px (inline)", "20px (nav/standalone)", "24px (hero/empty state)", "32px"],
+    "sets": {
+      "product-navigation": {
+        "prefix": "ia-",
+        "icons": ["ia-home", "ia-engage", "ia-audience", "ia-template", "ia-analyze", "ia-settings", "ia-bulb", "ia-filter", "ia-client-logo", "ia-user-profile", "ia-documentation", "ia-support"]
+      },
+      "cdp-navigation": {
+        "icons": ["business-overview", "customer-profile", "sources", "destinations", "data-connectors", "business-insights", "data-health", "catalog", "derived-attributes"]
+      },
+      "ui-controls": {
+        "icons": ["view-password", "equal", "contain", "arrows", "notification-bell", "double-chevron", "file-types", "radio-button", "checkbox"]
+      }
+    }
+  },
+
+  "nudges": {
+    "zeroheight": "Resources → Nudges on CEE",
+    "without-cta": {
+      "bg": "#191919",
+      "text": "#FFFFFF",
+      "radius": "8px",
+      "backdrop": "#17173A at opacity 0.5"
+    },
+    "with-cta": {
+      "bg": "#FFFFFF",
+      "title": "#17173A",
+      "body": "#6F6F8D",
+      "primary-btn": { "fill": "#143F93", "border": "#143F93", "text": "#FFFFFF", "case": "UPPERCASE" },
+      "secondary-btn": { "fill": "#FFFFFF", "border": "#DDE2EE", "text": "#6F6F8D", "case": "UPPERCASE" },
+      "rule": "Single button = always primary. Secondary only when absolutely required."
+    },
+    "spotlight": {
+      "overlay-opacity": "0.7 or 0.8",
+      "btn": { "fill": "#FFFFFF", "border": "#FFFFFF", "text": "#191919", "case": "UPPERCASE" },
+      "rule": "Overlay entire page — not a smaller section"
+    }
+  }
+}

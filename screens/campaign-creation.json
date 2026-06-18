@@ -1,0 +1,266 @@
+{
+  "$metadata": {
+    "flow": "Campaign Creation",
+    "figma-screenshots-section": "H2W6ldaO1Py7WW5c3b6YpW — node 31:4752",
+    "figma-assets-section": "H2W6ldaO1Py7WW5c3b6YpW — node 31:4753",
+    "canvas-width": "1440px",
+    "note": "ALWAYS use get_design_context(fileKey='H2W6ldaO1Py7WW5c3b6YpW', nodeId='<id>') before generating any campaign screen. These specs are the source of truth — do NOT invent layout."
+  },
+
+  "flow-overview": {
+    "total-screens": 10,
+    "stepper-steps": ["Setup", "Audience", "Content", "Schedule", "Preview"],
+    "entry-point": "Campaign Home page → click CREATE → Campaign-Type modal"
+  },
+
+  "shared-chrome": {
+    "top-bar": {
+      "figma-node": "organism/Top Bar/CDP Header",
+      "height": "97px",
+      "contents": ["Back arrow (←)", "Campaign title", "Stepper (5 steps)", "SAVE DRAFT button (125×34px)", "Schedule/action button (106×34px)"]
+    },
+    "stepper": {
+      "steps": ["Setup", "Audience", "Content", "Schedule", "Preview"],
+      "step-anatomy": "24×24 icon + text label",
+      "connector": "62px wide line between steps",
+      "active-step": "filled cobalt icon",
+      "completed-step": "checkmark icon",
+      "upcoming-step": "grey outline icon"
+    },
+    "summary-panel": {
+      "width": "350px",
+      "position": "right side, fixed",
+      "sections": ["Setup", "Audience", "Content", "Schedule"],
+      "fields-shown": ["Campaign Name", "Tags", "Conversion Goal", "GA Tracking"],
+      "each-field": "label (H4 bold) + value (body-regular grey)"
+    }
+  },
+
+  "screens": {
+
+    "1-campaign-home": {
+      "name": "Campaign Home page",
+      "figma-node": "31:4585",
+      "size": "1440×900",
+      "description": "Landing page listing all campaigns. CREATE button in top nav triggers the type-selection modal."
+    },
+
+    "2-campaign-type": {
+      "name": "Campaign Type Selection",
+      "figma-node": "23:512",
+      "size": "1440×900",
+      "layout": "Full-height right-side modal panel sliding over the page",
+      "modal": {
+        "width": "840px",
+        "offset-from-left": "600px",
+        "height": "900px (full viewport)",
+        "header": {
+          "title": "How would you like to start?",
+          "close-button": "40×40px × icon, top-right at x:704"
+        },
+        "options-grid": {
+          "container": "744×498px at x:48 y:128",
+          "grid": "2×2",
+          "each-option": {
+            "size": "360×237px",
+            "icon": "48×48px, centered horizontally, y:40 (or y:50)",
+            "text-block": "centered below icon",
+            "title": "SemiBold 20px, charcoal",
+            "description": "Regular 14px, grey, 2-3 lines"
+          },
+          "options": [
+            { "id": "engage", "title": "Engage with users", "icon": "megaphone-off", "desc": "Create personalized campaigns and user journeys" },
+            { "id": "analyze", "title": "Analyze user behaviour", "icon": "bar-chart", "desc": "Create funnels, cohorts, and RFM to measure performance" },
+            { "id": "create-template", "title": "Create template", "icon": "layout-dashboard", "desc": "Customize reusable templates for your campaigns" },
+            { "id": "manage-contacts", "title": "Manage contacts", "icon": "circle-x", "desc": "Add contacts, import list or create segment" }
+          ]
+        }
+      }
+    },
+
+    "3-campaign-engage": {
+      "name": "Campaign Engage — Channel Selection",
+      "figma-node": "23:820",
+      "size": "1440×900",
+      "layout": "Wider full-height modal panel",
+      "modal": {
+        "width": "1136px",
+        "offset-from-left": "304px",
+        "height": "900px",
+        "header": {
+          "title": "How do you want to engage with your users?",
+          "close-button": "40×40px × icon at x:1000"
+        },
+        "content": {
+          "container": "1040×706px at x:48 y:128",
+          "sections": [
+            {
+              "id": "journey",
+              "y-offset": "48px",
+              "header": null,
+              "cards": [
+                { "name": "Journey", "icon": "chart-network 24×24", "card-size": "230×72px" }
+              ]
+            },
+            {
+              "id": "campaigns",
+              "y-offset": "160px",
+              "header": { "icon": "megaphone 18×18", "label": "Campaigns" },
+              "card-grid": "row 1: 4 cards, row 2: 2 cards (gap 16px between cards)",
+              "cards": [
+                { "name": "Email",         "icon": "atom/icon/email 24×24" },
+                { "name": "SMS",           "icon": "atom/icon/sms 24×24" },
+                { "name": "App push",      "icon": "atom/icon/app push 24×24" },
+                { "name": "Web push",      "icon": "atom/icon/browser push 24×24" },
+                { "name": "WhatsApp",      "icon": "atom/icon/whatsapp 24×24" },
+                { "name": "RCS",           "icon": "atom/icon/RCS 24×24", "badge": "New — 47×20px, right side of card" }
+              ]
+            },
+            {
+              "id": "onsite",
+              "y-offset": "398px",
+              "header": { "icon": "computer 18×18", "label": "Onsite" },
+              "cards": [
+                { "name": "In-app message", "icon": "atom/icon/In app messages 24×24" },
+                { "name": "Web message",    "icon": "atom/icon/web messages 24×24" }
+              ]
+            },
+            {
+              "id": "personalized",
+              "y-offset": "548px",
+              "header": { "icon": "user-star 18×18", "label": "Personalized Content" },
+              "cards": [
+                { "name": "Web", "icon": "image 24×24" },
+                { "name": "App", "icon": "smartphone 24×24" }
+              ]
+            }
+          ],
+          "card-anatomy": {
+            "size": "230×72px",
+            "icon-bg": "60×60px at x:180 y:6 (decorative, right side)",
+            "content-row": "190×24px at x:20 y:24",
+            "icon-in-row": "24×24px",
+            "label": "154×20px at x:36, emphasis typography"
+          }
+        }
+      }
+    },
+
+    "4-campaign-setup": {
+      "name": "Campaign Setup",
+      "figma-node": "23:1001",
+      "size": "1440×1324",
+      "layout": "Full page with top bar + form + right summary panel",
+      "top-bar": "organism/Top Bar/CDP Header — 97px",
+      "sections": [
+        {
+          "id": "campaign-details",
+          "title": "Campaign details",
+          "subtitle": "Provide basic details about your campaign",
+          "fields": ["Campaign Name", "Tags", "Category Labels", "Conversion Goal toggle", "GA Tracking toggle"]
+        },
+        {
+          "id": "ga-tracking",
+          "title": "GA Tracking",
+          "subtitle": "Track your campaign performance. Set default values for Google Analytics.",
+          "fields": ["UTM Campaign (utm_campaign)", "UTM Content (utm_content)", "URL parameters"]
+        }
+      ],
+      "summary-panel": "see shared-chrome.summary-panel"
+    },
+
+    "5-campaign-audience-1": {
+      "name": "Campaign Audience — Step 1",
+      "figma-node": "31:694",
+      "size": "1440×689",
+      "top-bar": "organism/Top Bar/CDP Header — 97px",
+      "description": "Audience targeting setup — segment selection and filtering"
+    },
+
+    "6-campaign-audience-2": {
+      "name": "Campaign Audience — Step 2",
+      "figma-node": "31:4595 (screenshot) — see assets for detail",
+      "size": "1440×1315",
+      "description": "Expanded audience page — segmentation filters applied"
+    },
+
+    "7-campaign-content": {
+      "name": "Campaign Content",
+      "figma-node": "31:3804",
+      "size": "1440×1411",
+      "layout": "Two main sections stacked vertically",
+      "sections": [
+        {
+          "id": "sender-details",
+          "figma-node": "31:3805",
+          "height": "512px",
+          "contents": ["top-bar (52px)", "main-content form (460px)"]
+        },
+        {
+          "id": "email-template-gallery",
+          "figma-node": "31:3845",
+          "height": "899px",
+          "figma-container": "31:3846",
+          "description": "Template picker gallery — grid of email templates to select from"
+        }
+      ]
+    },
+
+    "8-campaign-content-selected": {
+      "name": "Campaign Content — Template Selected",
+      "figma-node": "31:4599 (screenshot)",
+      "size": "1440×1644",
+      "description": "Content page with a template selected — shows preview + edit options"
+    },
+
+    "9-campaign-schedule": {
+      "name": "Campaign Schedule",
+      "figma-node": "31:4435",
+      "size": "1440×734",
+      "top-bar": "100px",
+      "sections": [
+        {
+          "id": "frequency-cap",
+          "title": "Frequency Cap",
+          "toggle": "40×22px toggle switch (on/off)",
+          "warning-box": "860px wide, triangle-alert 18×18, warning text",
+          "y-offset": "92px in schedule-campaign container"
+        },
+        {
+          "id": "when-to-send",
+          "title": "When to send",
+          "radio-group": {
+            "options": ["Send now", "Send later", "Slice & send", "Optimize with co-marketer"],
+            "radio-size": "16×16px",
+            "label-offset": "x:24",
+            "help-icon": "circle-help 14×14 after 'Optimize with co-marketer'"
+          }
+        }
+      ],
+      "schedule-container": {
+        "size": "988×464px",
+        "position": "x:30 y:127",
+        "header-row": { "size": "908×28px", "main-title": "181×28px", "metadata": "293×18px right-aligned" }
+      },
+      "top-bar-buttons": {
+        "save-draft": "125×34px",
+        "schedule": "106×34px",
+        "both-right-aligned-at": "x:1149"
+      }
+    },
+
+    "10-campaign-preview": {
+      "name": "Campaign Preview",
+      "figma-node": "31:4154",
+      "size": "1440×1115",
+      "description": "Final review screen — shows a preview of the campaign before publishing"
+    }
+  },
+
+  "how-to-use": {
+    "step-1": "Call get_design_context(fileKey='H2W6ldaO1Py7WW5c3b6YpW', nodeId='<screen-figma-node>') to get exact specs + generated code for that screen",
+    "step-2": "Use specs above to fill in exact dimensions that get_design_context may not fully capture",
+    "step-3": "Apply DLS tokens from color-tokens.json + typography-tokens.json for all styling",
+    "step-4": "Run post-generation checklist from netcore-dls2.md before returning output"
+  }
+}

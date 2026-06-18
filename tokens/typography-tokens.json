@@ -1,0 +1,234 @@
+{
+  "$metadata": {
+    "system": "Infinity DS 2.0 — Netcore CE Platform",
+    "version": "2.0.0",
+    "source": "Authoritative: /Users/taiyabafsar/Downloads/design_system_styles.css (Zeroheight CSS export)",
+    "figma-file": "GTAOKrmqHr65sLErXRivA6",
+    "note": "All values confirmed from design_system_styles.css. Use CSS variable names as canonical references."
+  },
+
+  "font": {
+    "family": {
+      "primary": { "$value": "Nunito Sans", "$type": "fontFamily", "$description": "Primary UI font — ALL text across CEE platform" },
+      "display": { "$value": "Nunito",      "$type": "fontFamily", "$description": "Numeric displays, adoption scores, large stat figures" }
+    },
+    "weight": {
+      "regular":   { "$value": 400, "$type": "fontWeight", "$css": "NunitoSans-Regular" },
+      "semibold":  { "$value": 600, "$type": "fontWeight", "$css": "NunitoSans-SemiBold" },
+      "bold":      { "$value": 700, "$type": "fontWeight", "$css": "NunitoSans-Bold" },
+      "extrabold": { "$value": 800, "$type": "fontWeight", "$css": "NunitoSans-ExtraBold" }
+    },
+    "variation": {
+      "required": {
+        "$value": "\"YTLC\" 500, \"wdth\" 100",
+        "$description": "MANDATORY — always apply fontVariationSettings when using Nunito Sans. Without this the font renders incorrectly."
+      }
+    }
+  },
+
+  "typeScale": {
+
+    "header-h1": {
+      "$value": {
+        "fontFamily": "Nunito Sans",
+        "fontWeight": 700,
+        "fontSize": "24px",
+        "lineHeight": "32px",
+        "letterSpacing": "0.4px"
+      },
+      "$type": "typography",
+      "$css-var": "--header-h1-*",
+      "$description": "Page headings, section titles at page level"
+    },
+
+    "header-h2": {
+      "$value": {
+        "fontFamily": "Nunito Sans",
+        "fontWeight": 700,
+        "fontSize": "20px",
+        "lineHeight": "28px",
+        "letterSpacing": "0.4px"
+      },
+      "$type": "typography",
+      "$css-var": "--header-h2-*",
+      "$description": "Card headings, section headings within a page"
+    },
+
+    "header-h3": {
+      "$value": {
+        "fontFamily": "Nunito Sans",
+        "fontWeight": 700,
+        "fontSize": "16px",
+        "lineHeight": "22px",
+        "letterSpacing": "0.4px"
+      },
+      "$type": "typography",
+      "$css-var": "--header-h3-*",
+      "$description": "Sub-section headings, drawer titles"
+    },
+
+    "header-h4": {
+      "$value": {
+        "fontFamily": "Nunito Sans",
+        "fontWeight": 700,
+        "fontSize": "14px",
+        "lineHeight": "20px",
+        "letterSpacing": "0.4px"
+      },
+      "$type": "typography",
+      "$css-var": "--header-h4-*",
+      "$description": "Table column headers, form section labels"
+    },
+
+    "headline-1": {
+      "$value": {
+        "fontFamily": "Nunito Sans",
+        "fontWeight": 600,
+        "fontSize": "18px",
+        "lineHeight": "24px",
+        "letterSpacing": "0.4px"
+      },
+      "$type": "typography",
+      "$css-var": "--headline-headline-1-*",
+      "$description": "Prominent sub-page headlines"
+    },
+
+    "headline": {
+      "$value": {
+        "fontFamily": "Nunito Sans",
+        "fontWeight": 600,
+        "fontSize": "14px",
+        "lineHeight": "20px",
+        "letterSpacing": "0.3px"
+      },
+      "$type": "typography",
+      "$css-var": "--headline-headline-*",
+      "$description": "EXCEPTION: letterSpacing is 0.3px (not 0.4px like other 14px styles). Widget headings, stat card labels."
+    },
+
+    "emphasis": {
+      "$value": {
+        "fontFamily": "Nunito Sans",
+        "fontWeight": 600,
+        "fontSize": "14px",
+        "lineHeight": "20px",
+        "letterSpacing": "0.4px"
+      },
+      "$type": "typography",
+      "$css-var": "--emphasis-emphasis-*",
+      "$description": "Emphasized body text — labels, key terms, nav item labels"
+    },
+
+    "body-bold": {
+      "$value": {
+        "fontFamily": "Nunito Sans",
+        "fontWeight": 700,
+        "fontSize": "14px",
+        "lineHeight": "20px",
+        "letterSpacing": "0.4px"
+      },
+      "$type": "typography",
+      "$css-var": "--body-body-bold-*",
+      "$description": "Bold body text — data values, metric numbers in tables"
+    },
+
+    "body-regular": {
+      "$value": {
+        "fontFamily": "Nunito Sans",
+        "fontWeight": 400,
+        "fontSize": "14px",
+        "lineHeight": "20px",
+        "letterSpacing": "0.4px"
+      },
+      "$type": "typography",
+      "$css-var": "--body-body-regular-*",
+      "$description": "Default body text — descriptions, form helper text, table cells"
+    },
+
+    "button-default": {
+      "$value": {
+        "fontFamily": "Nunito Sans",
+        "fontWeight": 600,
+        "fontSize": "14px",
+        "lineHeight": "20px",
+        "letterSpacing": "0.4px",
+        "textTransform": "uppercase"
+      },
+      "$type": "typography",
+      "$css-var": "--button-button-default-*",
+      "$description": "ALL button text MUST be UPPERCASE. Non-negotiable DLS rule."
+    },
+
+    "small-b": {
+      "$value": {
+        "fontFamily": "Nunito Sans",
+        "fontWeight": 700,
+        "fontSize": "12px",
+        "lineHeight": "16px",
+        "letterSpacing": "0.4px"
+      },
+      "$type": "typography",
+      "$css-var": "--button-small-b-*",
+      "$description": "Small bold — compact table headers, tag labels"
+    },
+
+    "small-sb": {
+      "$value": {
+        "fontFamily": "Nunito Sans",
+        "fontWeight": 600,
+        "fontSize": "12px",
+        "lineHeight": "16px",
+        "letterSpacing": "0.4px"
+      },
+      "$type": "typography",
+      "$css-var": "--button-small-sb-*",
+      "$description": "Small semibold — secondary labels, filter tags"
+    },
+
+    "small-xb": {
+      "$value": {
+        "fontFamily": "Nunito Sans",
+        "fontWeight": 800,
+        "fontSize": "12px",
+        "lineHeight": "16px",
+        "letterSpacing": "0.4px"
+      },
+      "$type": "typography",
+      "$css-var": "--button-small-xb-*",
+      "$description": "Small extra-bold — strong emphasis at small size, status chips"
+    },
+
+    "caption-c1": {
+      "$value": {
+        "fontFamily": "Nunito Sans",
+        "fontWeight": 400,
+        "fontSize": "12px",
+        "lineHeight": "16px",
+        "letterSpacing": "0.4px"
+      },
+      "$type": "typography",
+      "$css-var": "--caption-c1-*",
+      "$description": "Caption text — timestamps, helper text, metadata below labels"
+    },
+
+    "status": {
+      "$value": {
+        "fontFamily": "Nunito Sans",
+        "fontWeight": 700,
+        "fontSize": "10px",
+        "lineHeight": "16px",
+        "letterSpacing": "0.4px"
+      },
+      "$type": "typography",
+      "$css-var": "--status-status-*",
+      "$description": "Status badge text — ACTIVE, DRAFT, ENDED chips. Smallest text in the system."
+    }
+  },
+
+  "rules": {
+    "button-text-case": "ALL button text MUST be UPPERCASE — non-negotiable",
+    "headline-exception": "headline (not headline-1) uses 0.3px letter-spacing, not 0.4px",
+    "font-variation": "Always set fontVariationSettings: \"YTLC\" 500, \"wdth\" 100 when rendering Nunito Sans",
+    "color-default": "Default text color is #17173A (charcoal) — never pure black #000000"
+  }
+}
