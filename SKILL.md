@@ -74,24 +74,32 @@ One quirk: Figma reports letter-spacing as `0.41999…px`. The CSS export rounds
 
 ## Trigger Map
 
-Match the request to a row, load the files listed, call the Figma node if one is shown.
+Match the request to a row. Load the files listed, read the image if it exists in `assets/`, and call the Figma node if one is shown. Images give visual context; Figma gives exact measurements — use both when available.
 
-| When the request is about… | Load | Call Figma |
-|---|---|---|
-| Campaign creation flow / new campaign / campaign wizard | `references/campaign-flow.md` + `screens/campaign-creation.json` | `get_design_context('H2W6ldaO1Py7WW5c3b6YpW', '23:1001')` |
-| Campaign type selection ("how would you like to start") | `screens/campaign-creation.json` | `get_design_context('H2W6ldaO1Py7WW5c3b6YpW', '23:512')` |
-| Campaign channel / email / SMS / WhatsApp / push campaign | `screens/campaign-creation.json` | `get_design_context('H2W6ldaO1Py7WW5c3b6YpW', '23:820')` |
-| Audience targeting / segment selection | `screens/campaign-creation.json` | `get_design_context('H2W6ldaO1Py7WW5c3b6YpW', '31:694')` |
-| Campaign content / template gallery | `screens/campaign-creation.json` | `get_design_context('H2W6ldaO1Py7WW5c3b6YpW', '31:3804')` |
-| Campaign schedule / send now / frequency cap | `screens/campaign-creation.json` | `get_design_context('H2W6ldaO1Py7WW5c3b6YpW', '31:4435')` |
-| Campaign preview / campaign review | `screens/campaign-creation.json` | `get_design_context('H2W6ldaO1Py7WW5c3b6YpW', '31:4154')` |
-| Top navigation / top bar / header | `components/top-navigation.json` | `get_design_context('GTAOKrmqHr65sLErXRivA6', '299:13696')` |
-| Side navigation / left nav / navigation menu | `components/side-navigation.json` | `get_design_context('GTAOKrmqHr65sLErXRivA6', '577:55775')` |
-| Text field / input / form | `components/text-fields.json` | `get_design_context('GTAOKrmqHr65sLErXRivA6', '6183:17159')` |
-| Data table / listing page / campaign list | `references/components.md` (tables section) | `get_design_context('GTAOKrmqHr65sLErXRivA6', '144:7737')` |
-| Empty state / zero state / no data | `references/components.md` (empty states section) | — |
-| Modal / popup / confirmation dialog | `references/components.md` (modals section) | — |
-| Any UI generation (catch-all) | `references/tokens.md` + `references/components.md` | — |
+| When the request is about… | Load | Image | Call Figma |
+|---|---|---|---|
+| Campaign creation flow / new campaign / campaign wizard | `references/campaign-flow.md` + `screens/campaign-creation.json` | `assets/campaign-setup.png` | `get_design_context('H2W6ldaO1Py7WW5c3b6YpW', '23:1001')` |
+| Campaign type selection ("how would you like to start") | `screens/campaign-creation.json` | `assets/campaign-type-selection.png` | `get_design_context('H2W6ldaO1Py7WW5c3b6YpW', '23:512')` |
+| Campaign channel / email / SMS / WhatsApp / push campaign | `screens/campaign-creation.json` | `assets/campaign-channel-selection.png` | `get_design_context('H2W6ldaO1Py7WW5c3b6YpW', '23:820')` |
+| Audience targeting / segment selection | `screens/campaign-creation.json` | `assets/campaign-audience-step1.png` | `get_design_context('H2W6ldaO1Py7WW5c3b6YpW', '31:694')` |
+| Campaign content / template gallery | `screens/campaign-creation.json` | `assets/campaign-content.png` | `get_design_context('H2W6ldaO1Py7WW5c3b6YpW', '31:3804')` |
+| Campaign schedule / send now / frequency cap | `screens/campaign-creation.json` | `assets/campaign-schedule.png` | `get_design_context('H2W6ldaO1Py7WW5c3b6YpW', '31:4435')` |
+| Campaign preview / campaign review | `screens/campaign-creation.json` | `assets/campaign-preview.png` | `get_design_context('H2W6ldaO1Py7WW5c3b6YpW', '31:4154')` |
+| Top navigation / top bar / header | `components/top-navigation.json` | `assets/top-navigation.png` | `get_design_context('GTAOKrmqHr65sLErXRivA6', '299:13696')` |
+| Side navigation / left nav / navigation menu | `components/side-navigation.json` | `assets/side-nav-l1.png` + `assets/side-nav-l2.png` | `get_design_context('GTAOKrmqHr65sLErXRivA6', '577:55775')` |
+| Text field / input / form | `components/text-fields.json` | `assets/text-field-states.png` | `get_design_context('GTAOKrmqHr65sLErXRivA6', '6183:17159')` |
+| Data table / listing page / campaign list | `references/components.md` (tables section) | `assets/data-table.png` | `get_design_context('GTAOKrmqHr65sLErXRivA6', '144:7737')` |
+| Button / CTA | `references/components.md` (buttons section) | `assets/buttons.png` | — |
+| Empty state / zero state / no data | `references/components.md` (empty states section) | `assets/empty-state.png` | — |
+| Modal / popup / confirmation dialog | `references/components.md` (modals section) | `assets/modal.png` | — |
+| Side drawer / filter panel | `references/components.md` | `assets/side-drawer.png` | — |
+| Charts / analytics / donut / line / bar | `references/components.md` | `assets/charts-donut.png` + `assets/charts-bar.png` + `assets/charts-line.png` | — |
+| Funnel / cohort / RFM | `references/components.md` | `assets/analytics-funnel.png` + `assets/analytics-cohort.png` | — |
+| Nudge / tooltip / contextual help | `references/components.md` | `assets/nudge-with-cta.png` | — |
+| 404 / error page | — | `assets/404-page.png` | — |
+| Any UI generation (catch-all) | `references/tokens.md` + `references/components.md` | — | — |
+
+> If an image file doesn't exist yet in `assets/`, skip it and rely on the text specs + Figma call. See `assets/HOW-TO-EXPORT.md` for export instructions.
 
 ---
 
