@@ -1,5 +1,5 @@
 ---
-name: Netcore DS 2.0
+name: netcore-ds-2
 description: Netcore Infinity Design System 2.0 — use this skill whenever building, designing, or modifying any UI for the Netcore Customer Engagement Platform or CDP. Apply whenever someone asks to create a campaign flow, build a dashboard, design navigation, render a data table, create a form or modal, build a settings screen, design an analytics view, or generate any screen that should look and feel like the Netcore product. Even if the request seems simple ("add a button", "show a filter panel") — always load this skill first so the output matches the real Netcore design system exactly.
 ---
 
