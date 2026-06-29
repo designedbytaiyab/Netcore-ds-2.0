@@ -5,6 +5,20 @@ Format: `[version] — date` · Added / Changed / Fixed
 
 ---
 
+## [1.5.0] — 17 Jun 2026
+
+### Added
+- `brand-copywriting.md` — full Netcorian copywriting spec (voice, principles, patterns, workflows)
+- `copywriting/SKILL.md` — installable copywriting skill with `/copy` and `/netcorian` triggers
+- `copywriting/references/` — voice, rules, patterns, workflows, templates (progressive disclosure)
+
+### Changed
+- `netcore-dls2.md` — copywriting companion link in header
+- `SKILL.md` — copywriting reference routing and cross-links
+- `ux-writing.md` — points to Netcorian companion docs; retains DS 2.0 UPPERCASE button rules
+
+---
+
 ## [1.4.0] — 24 Jun 2026
 
 ### Added
