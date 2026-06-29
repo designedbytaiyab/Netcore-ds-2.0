@@ -1,7 +1,7 @@
 # UX Writing — Infinity DS 2.0
 
 > Source: Netcore Zeroheight → Communication → UX Writing  
-> **Netcorian companion:** Full voice, principles, workflows, and ship gates → `brand-copywriting.md` and `copywriting/SKILL.md`. This file retains DS 2.0-specific rules (UPPERCASE buttons, empty state anatomy).
+> **Netcorian companion:** Full voice, principles, workflows, and ship gates → `copywriting/spec.md` and `copywriting/SKILL.md`. This file retains DS 2.0-specific rules (UPPERCASE buttons, empty state anatomy).
 
 ---
 

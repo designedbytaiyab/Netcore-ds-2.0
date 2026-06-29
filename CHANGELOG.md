@@ -8,8 +8,9 @@ Format: `[version] — date` · Added / Changed / Fixed
 ## [1.5.0] — 17 Jun 2026
 
 ### Added
-- `brand-copywriting.md` — full Netcorian copywriting spec (voice, principles, patterns, workflows)
-- `copywriting/SKILL.md` — installable copywriting skill with `/copy` and `/netcorian` triggers
+- `copywriting/spec.md` — full Netcorian copywriting spec inside `copywriting/` folder
+- `copywriting/README.md` — folder map and trigger phrase table for AI discovery
+- `copywriting/SKILL.md` — installable copywriting skill with `/copy`, `/netcorian`, `/ux-writing` triggers
 - `copywriting/references/` — voice, rules, patterns, workflows, templates (progressive disclosure)
 
 ### Changed

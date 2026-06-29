@@ -58,13 +58,13 @@ The result is UI that a Netcore designer would recognise as correct — not an a
 | `design_system_styles.css` | Authoritative CSS variable export from Zeroheight | Verifying exact token values |
 | `ux-writing.md` | DS 2.0 button case, empty states, status vocabulary | Building UI strings for 2.0 screens |
 | `copywriting/SKILL.md` | Netcorian voice, `/copy` trigger, progressive disclosure | Writing or reviewing any Netcore copy |
-| `brand-copywriting.md` | Full copywriting spec (companion to `netcore-dls2.md`) | Deep audit or onboarding |
+| `copywriting/spec.md` | Full copywriting spec (companion to `netcore-dls2.md`) | Deep audit or onboarding |
 
 ---
 
 ## Copywriting
 
-For UI strings beyond DS 2.0 surface rules → `copywriting/SKILL.md` and `brand-copywriting.md`.
+For UI strings beyond DS 2.0 surface rules → `copywriting/SKILL.md` and `copywriting/spec.md`.
 
 Load `ux-writing.md` for 2.0-specific button UPPERCASE and empty state anatomy. Load `copywriting/SKILL.md` for Netcorian voice, jargon rules, and no em dashes.
 

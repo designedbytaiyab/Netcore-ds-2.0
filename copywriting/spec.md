@@ -352,7 +352,7 @@ When an AI agent writes Netcore copy, it must:
 ```
 Write [surface] copy for Netcore [product].
 User job: [job]
-Follow netcore-brand-copywriting.md — Netcorian voice, design principles, case rules.
+Follow copywriting/spec.md — Netcorian voice, design principles, case rules.
 Return a table: Surface | Title | Body | CTA | Notes
 ```
 
