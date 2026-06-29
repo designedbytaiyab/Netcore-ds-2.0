@@ -2,6 +2,7 @@
 
 > Infinity Design System 2.0 for the Netcore Customer Engagement Platform.
 > Every UI generation using this skill MUST follow these rules exactly. No exceptions.
+> **Copywriting companion:** UI strings, voice, and Netcorian rules live in `copywriting/spec.md` and `copywriting/SKILL.md`. This file governs visual tokens and components only.
 
 ---
 
